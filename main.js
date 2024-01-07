@@ -1,34 +1,55 @@
 /**
- * toan tu trong javascript
- * - toan tu so hoc: arithmetic
- * - toan tu gan: assignment
- * - toan tu so sanh: comparison
- * - toan tu logic: logical
+ * Toan tu so hoc - detail
+ *  1. cong
+ *  2. tru
+ *  3. nhan
+ *  4. luy thua
+ *  5. chia
+ *  6. chia lay du
+ *  7. tang 1 gia tri so
+ *  8. giam 1 gia tri so
  */
 
-// 1, 2: trong vi du nay co su dung 2 toan tu
-// toan tu gan: '='
-// toan tu so hoc: '+, - , *, /, ...'
-var a = 2 + 4;
-console.log(`>>> arithmetic: `)
-console.log(`2 + 4 =`, a)
+// cong
+var a;
+a = 2 + 5
+//console.log(a);
 
-// toan tu gan:
-console.log(`>>> assignment:`);
-var wishList = `forever love`
-console.log(`wishlist =`, wishList);
+console.log('--- Hậu tố ---');
 
-var x = 0;
-var y = 1;
-// toan tu so sanh:
-console.log(`>>> comparison:`);
-console.log(`x > y: `, x > y)
-console.log(`x == y: `, x == y)
-console.log(`x < y: `, x < y)
+var number1 = 1;
 
-var t = true
-var f = false
-// toan tu logic
-console.log(`>>> logical: `);
-console.log(`t && f: `, t && f);
-console.log(`t || f: `, t || f);
+console.log(number1++); // 1
+console.log(number1); // 2
+
+console.log(number1++); // 2
+console.log(number1); // 3
+
+console.log('--- Tiền tố ---');
+
+var number2 = 1;
+
+console.log(++number2); // 2
+console.log(number2); // 2
+
+console.log(++number2); // 3
+console.log(number2); // 3
+
+// Toán tử -- tương tự các bạn nhé, điểm khác
+// là thay vì cộng 1 trừ toán tử -- sẽ trừ 1
+
+console.log("Conclude: khi su dung ++ lam hau to,\nSe lam tang gia tri cua bien len 1 va tra ve gia tri cua bien truoc khi tang")
+console.log(`Tien do thi khac, no tang gia tri cua bien va tra ve gia tri cua bien sau khi tang`);
+
+// example
+var number = 10;
+
+/**
+ * number++ => 11 * 2 => 22
+ * number => 11
+ * --numner => --11 => 11 * 2
+ * 10 + 10 = 0
+ */
+
+var output = ++number * 2 - number-- * 2
+console.log(`++number * 2 - number-- * 2:`, output);
