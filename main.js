@@ -5,4 +5,7 @@ Muc tieu khoa hoc:
 -
 */
 
-console.log("xin chao moi nguoi nhe")
+var fullName = `LY THANH LONG`
+let filler = document.getElementById("filler")
+
+filler.innerText = fullName
