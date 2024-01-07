@@ -1,38 +1,34 @@
 /**
- * gioi thieu 1 so ham built-in co trong javascript
- * 1. alert
- * 2. console
- * 3. confirm
- * 4. promt
- * 5. settimeout
- * 6. setinterval
+ * toan tu trong javascript
+ * - toan tu so hoc: arithmetic
+ * - toan tu gan: assignment
+ * - toan tu so sanh: comparison
+ * - toan tu logic: logical
  */
 
-console.log(`this is a log`)
-console.log(123)
+// 1, 2: trong vi du nay co su dung 2 toan tu
+// toan tu gan: '='
+// toan tu so hoc: '+, - , *, /, ...'
+var a = 2 + 4;
+console.log(`>>> arithmetic: `)
+console.log(`2 + 4 =`, a)
 
-var fullName = `xin chao vietnam`
-console.log(fullName);
-console.warn(`log vua thoi`);
+// toan tu gan:
+console.log(`>>> assignment:`);
+var wishList = `forever love`
+console.log(`wishlist =`, wishList);
 
-var isAdult = confirm(`Ban da tren 18 tuoi`);
-console.log(`- confirmed: `, isAdult);
+var x = 0;
+var y = 1;
+// toan tu so sanh:
+console.log(`>>> comparison:`);
+console.log(`x > y: `, x > y)
+console.log(`x == y: `, x == y)
+console.log(`x < y: `, x < y)
 
-var whatYouEnter = prompt("Enter anything you are thinking about!")
-console.log(`- promted: `, whatYouEnter);
-
-setTimeout(() => {
-  console.log(`I waited 1s`);
-}, 1000);
-setTimeout(() => {
-  console.log(`I waited 2s`);
-}, 2000);
-setTimeout(() => {
-  console.log(`I waited 3s`);
-}, 3000);
-
-
-/// Send current time after each a second
-// setInterval(() => {
-//   console.log('counting up: ', new Date().getSeconds(), new Date().getMinutes(), new Date().getHours());
-// }, 1000);
+var t = true
+var f = false
+// toan tu logic
+console.log(`>>> logical: `);
+console.log(`t && f: `, t && f);
+console.log(`t || f: `, t || f);
