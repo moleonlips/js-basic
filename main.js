@@ -45,7 +45,7 @@ console.log(`Tien do thi khac, no tang gia tri cua bien va tra ve gia tri cua bi
 var number = 10;
 
 /**
- * number++ => 11 * 2 => 22
+ * ++number => 11 * 2 => 22
  * number => 11
  * --numner => --11 => 11 * 2
  * 10 + 10 = 0
@@ -53,3 +53,10 @@ var number = 10;
 
 var output = ++number * 2 - number-- * 2
 console.log(`++number * 2 - number-- * 2:`, output);
+
+// noi chuoi
+var firstName = 'Thanh'
+var lastName = 'Long'
+
+fullName = firstName + ' ' + lastName
+console.log(fullName);
