@@ -1,51 +1,27 @@
 /**
- * ==: so sanh bang
- * >=: so sanh lon hon hoac bang
- * <=: so sanh nho hon hoac bang
- * !=: so sanh khac
- * >: so sanh lon hon
- * <: so sanh be hon
+ * FALSY trong JS
+ * - 0
+ * - false
+ * - '' or ""
+ * - undefined
+ * - null
+ * 
+ * Truthy trong JS
+ * !Falsy
  */
 
-var a = 10
-var b = 4
+// comment all value except your expect value
+var isSuccess = 'thanh long'
+// isSuccess = 0
+// isSuccess = false
+// isSuccess = ''
+// isSuccess = undefined
+// isSuccess = NaN
+// isSuccess = null
 
-if (a > b) {
-  console.log(`${a} > ${b} la dung`);
-} else {
-  console.log(`${a} > ${b} la sai`);
+if (isSuccess) {
+  console.log('>>> truthy');
 }
-
-if (a != b) {
-  console.log(`${a} != ${b} la dung`);
-} else {
-  console.log(`${a} != ${b} la sai`);
-}
-
-
-if (a == b) {
-  console.log(`${a} == ${b} la dung`);
-} else {
-  console.log(`${a} == ${b} la sai`);
-}
-
-
-if (a <= b) {
-  console.log(`${a} <= ${b} la dung`);
-} else {
-  console.log(`${a} <= ${b} la sai`);
-}
-
-
-if (a >= b) {
-  console.log(`${a} >= ${b} la dung`);
-} else {
-  console.log(`${a} >= ${b} la sai`);
-}
-
-
-if (a < b) {
-  console.log(`${a} < ${b} la dung`);
-} else {
-  console.log(`${a} < ${b} la sai`);
+else {
+  console.log('>>> falsy')
 }
