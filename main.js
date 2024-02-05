@@ -1,27 +1,16 @@
 /**
- * FALSY trong JS
- * - 0
- * - false
- * - '' or ""
- * - undefined
- * - null
- * 
- * Truthy trong JS
- * !Falsy
+ * Toan tu logic
+ * 1. && - and
+ * 2. || - or
+ * 3. ! - not
  */
 
-// comment all value except your expect value
-var isSuccess = 'thanh long'
-// isSuccess = 0
-// isSuccess = false
-// isSuccess = ''
-// isSuccess = undefined
-// isSuccess = NaN
-// isSuccess = null
+var a = true
+var b = false
 
-if (isSuccess) {
-  console.log('>>> truthy');
-}
-else {
-  console.log('>>> falsy')
-}
+console.log('>>> a: ', a);
+console.log('>>> b: ', b);
+
+console.log('>>> a && b: ', a && b); // a and b must be True
+console.log('>>> a || b: ', a || b); // atless a value be True
+console.log('>>> a !== b: ', a !== b); // comparating result is v
