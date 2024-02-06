@@ -1,37 +1,24 @@
-// Hieu hon ve cau lenh dieu kien va phep so sanh
+// Ham (function) trong JS
 
-var a = 1;
-var b = 2;
+// 1. Function:
+// - la mot khoi ma
+// - la mot viec lam, hanh dong cu the
 
-var checking = a > b && a > 0
+// 2. loai ham:
+// - ham built-in
+// - ham tu dinh nghia
 
-checking ? console.log('a < b') : console.log('a > b')
-console.log(checking);
+// 3. tinh chat:
+// - khong thuc thi khi dinh nghia
+// - se thuc thi khi duoc goi
+// - co the nhan tham so
+// - co the tra ve 1 gia tri
 
+// 4. first touch:
 
-/**
- * Khi su dung toan tu logic:
- * - TH1: &&
- * => neu cac menh de cung mang gia tri truthy, => ket qua se la gia tri cua menh de cuoi cung
- * => neu trong bieu thuc logic co 1 hoac nhieu menh de mang gia tri falsy, => ket qua se la gia tri cua menh de falsy xuat hien dau tien
- * 
- * - TH2: ||
- * => neu cac menh de cung mang gia tri falsy, => ket qua se laf gia tri cua menh de dau tien
- * => neu co 1 hoac nhieu menh de mang gia tri truthy, => ket qua se la gia tri cua menh de truthy xuat hien dau tien
- */
+function sayhi(whatISay) {
+  console.log(whatISay) // console.log cung chinh la 1 ham built-in cua JS
+}
 
-
-// &&
-checking = 'B' && 0 && undefined && null
-console.log(checking);
-
-checking = 1 && 0 && 6
-console.log(checking);
-
-
-// ||
-checking = 0 || 'B' || null || 90
-console.log(checking);
-
-checking = 1 || 0 || 6
-console.log(checking);
+var sentence = 'hi world!'
+sayhi(sentence)
