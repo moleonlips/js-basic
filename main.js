@@ -1,24 +1,35 @@
-// Ham (function) trong JS
+/** THAM SO VA DOI SO TRONG HAM
+ * 1. Tham so:
+ * - Dinh nghia
+ * - Kieu du lieu
+ * - Tinh private?
+ * - 1 tham so
+ * - nhieu tham so
+ * 
+ * 2. Tham so:
+ * - 1 tham so hoac nhieu tham so
+ * - duoc xac dinh khi dinh nghia ham
+ * 
+ * 3. Doi so:
+ * - duoc truyen khi thuc thi (excute) ham
+ * - co the truyen 1 hoac nhieu doi so, tuy thuoc vao so luong tham so khi dinh nghia (declare) ham
+ */
 
-// 1. Function:
-// - la mot khoi ma
-// - la mot viec lam, hanh dong cu the
-
-// 2. loai ham:
-// - ham built-in
-// - ham tu dinh nghia
-
-// 3. tinh chat:
-// - khong thuc thi khi dinh nghia
-// - se thuc thi khi duoc goi
-// - co the nhan tham so
-// - co the tra ve 1 gia tri
-
-// 4. first touch:
-
-function sayhi(whatISay) {
-  console.log(whatISay) // console.log cung chinh la 1 ham built-in cua JS
+function writeLog(msg) {
+  console.log(msg)
 }
 
-var sentence = 'hi world!'
-sayhi(sentence)
+writeLog('xin chao moi nguoi')
+// => 1 tham so
+
+function checkGender(hasPenis, hiforgirl, hiforboy) {
+  if (hasPenis == false) {
+    console.log(`this is a girl`, `and she says ${hiforgirl}`);
+  }
+  else {
+    console.log(`this is a boy`, `and she says ${hiforboy}`);
+  }
+}
+
+checkGender(true, 'hi mom', `hello mther fuker`)
+checkGender(false, 'hi mom', `hello mther fuker`)
