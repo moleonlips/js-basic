@@ -2,15 +2,15 @@
  * 1. Tham so:
  * - Dinh nghia
  * - Kieu du lieu
- * - Tinh private?
+ * - Tinh private - chi su dung duoc trong ham
  * - 1 tham so
  * - nhieu tham so
  * 
- * 2. Tham so:
- * - 1 tham so hoac nhieu tham so
+ * 2. Tham so (parameters):
  * - duoc xac dinh khi dinh nghia ham
+ * - 1 tham so hoac nhieu tham so
  * 
- * 3. Doi so:
+ * 3. Doi so (arguments):
  * - duoc truyen khi thuc thi (excute) ham
  * - co the truyen 1 hoac nhieu doi so, tuy thuoc vao so luong tham so khi dinh nghia (declare) ham
  */
