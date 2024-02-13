@@ -1,44 +1,62 @@
 /**
- * STRING IN JS
- * 1. Creating
- * - how to creata a string
- * - what is the best way that we should to use
- * - data type checking
- * 
- * 2. when need backslash (\)
- * 
- * 3. length of string
- * 
- * 4. clean code
- * 
- * 5. template strign ES6
- * - gioi han chuoi ben trong cap dau ``
+ * LAM VIEC VOI CHUOI
+ * keyword: js string method
  */
 
-// 1.
-var s1 = 'String 1' // faster, should use
-var s2 = new String('String 2') // lower, only learn to know
-console.log(typeof s1);
+// 1. length
+var mystring = 'xin chao viet nam'
+console.log('>>> check length of string:', mystring.length);
 
-// 2. [keysearch: backslash in JS]
-console.log('when need \'backslash\'');
-console.log('day la dau "\\"');
+// 2. find index
+var string2 = 'this is this my string'
+console.log('>>> index of "this":', string2.indexOf('this'));
+console.log('>>> index of "camxamita":', string2.indexOf('camxamita'));
 
-// 3. length of string
-var myString = 'ly thanh long'
-console.log('>>> length of \'ly thanh long\':', myString.length);
+function searchString(inputString, keyword) {
+  return inputString.indexOf(keyword) !== -1 ? `"${keyword}" was find in "${inputString}" at ${inputString.indexOf(keyword)}` : `"${keyword}" wasn't find in "${inputString}"`
+}
+
+/// tim kiem tu khoa trong 1 chuoi dua vao index
+var mystr = 'this is my string'
+console.log(searchString(mystr, 'is'));
+console.log(searchString(mystr, 'us'));
+console.log(searchString(mystr, 'long'));
+
+console.log('>>> search attribute:', mystr.search('my s'))
+
+/// cut string
+var fullname = 'LY THANH LONG'
+// expect: chi tra ve lastname
+function getLastName(fullname) {
+  let _fName = String(fullname)
+  let lastSpace = _fName.lastIndexOf(' ')
+  return _fName.substring(lastSpace + 1, _fName.length) // using substring
+}
+
+console.log('>>> get lastname:', getLastName(fullname));
+
+// 2nd solution
+var outputstring = fullname.slice(3)
+console.log('>>> after slice:', outputstring);
+/// truyen so am de cat nguoc tu cuoi chuoi, vidu:
+console.log('>>> cat nguoc:', fullname.slice(-4)) // 'LY THANH LONG' -> 'LONG'
 
 
-// 4. (cach trinh bay khi gap chuoi qua dai)
-var longString = 'xin chao viet nam, toi den tu my, nam nay 27 tuoi'
-  + 'xin chao viet nam, toi den tu my, nam nay 27 tuoi'
-  + 'xin chao viet nam, toi den tu my, nam nay 27 tuoi'
+// replace
+var mstr = 'hello world, wellcome to my JS course, lesson 1 - what is JS'
+// without REGEX: only first searchvalue is replaced
+console.log('>>> without regex:', mstr.replace('JS', 'Javascript'))
 
-console.log(longString);
-console.log('>>> longStringUsingTemplateString: ', longStringUsingTemplateString);
+// within REGEX: replace all searchvalue present in input string
+console.log('>>> within regex:', mstr.replace(/JS/g, 'Javascript'));
 
-// 5.
-var firstName = 'Ly'
-var lastName = 'Long'
 
-console.log(`>>> check template string. \nToi la: ${firstName} ${lastName}`);
+// trim: Removes the leading and trailing white space and line terminator characters from a string, eg:
+var testTrim = '   xin chao moi nguoi  '
+console.log('>>> before trim:', testTrim, testTrim.length);
+console.log('>>> after trim:', testTrim.trim(), testTrim.trim().length);
+
+
+// split: 
+var testSplit = 'Java - PHP - Ruby - C# - C++'
+console.log('>>> after split:', testSplit.split(' - '));
