@@ -1,50 +1,44 @@
 /**
- * List of type of functions
+ * STRING IN JS
+ * 1. Creating
+ * - how to creata a string
+ * - what is the best way that we should to use
+ * - data type checking
  * 
- * 1. Declarationn function
- * - has Hoisting: yes
+ * 2. when need backslash (\)
  * 
- * 2. Expression function
- * - has Hoisting: no
- * - co the dat ten hoac khong, (muc dich duy nhat cua ten ham chi de dev hieu duoc cong dung cua ham do, duoc su dung lam viec gi)
+ * 3. length of string
  * 
- * 3. Arrow function
- * - duoc gioi thieu lan dau trong ES6
- * - cho phep khai bao function voi cu phap ngan gon hon
+ * 4. clean code
+ * 
+ * 5. template strign ES6
+ * - gioi han chuoi ben trong cap dau ``
  */
 
-// 1. Declaration function - ham khai bao
-function showMessage() {
-  console.log('>> check declaration function');
-}
+// 1.
+var s1 = 'String 1' // faster, should use
+var s2 = new String('String 2') // lower, only learn to know
+console.log(typeof s1);
 
-// 2. Expression function -  ham bieu thuc
-var showMsg2 = function testName() {
-  console.log('>> check expression function');
-}
+// 2. [keysearch: backslash in JS]
+console.log('when need \'backslash\'');
+console.log('day la dau "\\"');
 
-// setTimeout(function testName() {
-
-// }, 2000);
-
-// var myObj = {
-//   myFnt: function testName() {
-
-//   }
-// }
+// 3. length of string
+var myString = 'ly thanh long'
+console.log('>>> length of \'ly thanh long\':', myString.length);
 
 
-// 3. Arrow function
-var arf = () => {
-  console.log('>>> check arrow function!');
-}
+// 4. (cach trinh bay khi gap chuoi qua dai)
+var longString = 'xin chao viet nam, toi den tu my, nam nay 27 tuoi'
+  + 'xin chao viet nam, toi den tu my, nam nay 27 tuoi'
+  + 'xin chao viet nam, toi den tu my, nam nay 27 tuoi'
 
-// arrow function return value by default
-var say = (saySomething) => saySomething
+console.log(longString);
+console.log('>>> longStringUsingTemplateString: ', longStringUsingTemplateString);
 
+// 5.
+var firstName = 'Ly'
+var lastName = 'Long'
 
-// excuting
-showMessage()
-showMsg2()
-arf()
-console.log(say('>>> this is arrow function!'))
+console.log(`>>> check template string. \nToi la: ${firstName} ${lastName}`);
