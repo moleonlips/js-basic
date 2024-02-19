@@ -1,46 +1,40 @@
 /**
- * kieu so (number) trong js
+ * mang trong JS - Array
  * 
- * 1. tao gia tri number
- * - cac cach tao
- * - dung tnao, tsao
- * - kiem tra datatype
+ * 1. tao mang
+ * - cach tao
+ * - su dung cach nao, tai sao
+ * - kiem tra data type
  * 
- * 2. lam viec voi number
- * - tostring
- * - tofixed
+ * 2. truy xuat mang
+ * - do dai mang
+ * - lay phan tu theo index
  */
 
+// the 1st way:
+var flowers = [
+  'rose',
+  'sun-flower',
+  'violet',
+]
 
-// cach tao 1 number thong thuong
-var age = 18;
-var PI = 3.14;
-// tao number su dung tu khoa new
-var otherNumber = new Number(9)
+var addon = [...flowers, 2000, { name: 'thanh long', gender: 'male' }, 'hello']
 
-console.log(typeof PI); // number
-console.log(typeof age); // number
-console.log(typeof otherNumber); // object -> unexpected
+console.log(addon);
 
+// the 2nd way:
+var flwers = new Array('xin chao', 123, { field: 'person' }) // -> khong khuyen cao su dung
 
-var result = 20 / 'xin chao'
+/// Kiem tra kieu du lieu
+console.log('>>> check type:', typeof flowers)
 
-console.log(result); // NaN
+// phan biet giua Array voi Object
+var arr = []
+var obj = {}
 
-var rounded = PI.toFixed()
-
-console.log(rounded);
+console.log('arr is array:', Array.isArray(arr)); // true
+console.log('obj is array:', Array.isArray(obj)); // false
 
 
-// kiem tra 1 so co phai kieu so hay khong
-function isNumber(value) {
-  return isNaN(value) ? false : typeof value != 'number' ? false : true
-}
-
-var v1 = '90'
-var v2 = 12
-var v3 = NaN
-
-console.log(isNumber(v1));
-console.log(isNumber(v2));
-console.log(isNumber(v3));
+/// truy xuat phan tu trong mang
+console.log(flowers[2]); // phan tu thu 3 trong mang
