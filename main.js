@@ -1,65 +1,80 @@
-// object prototype - basic
 /**
- * 1. prototype la gi (~ la nguyen mau cua doi tuong)
- * 2. su dung prototype khi nao?
+ * Doi tuong Date trong JS
  */
 
-function User(firstName, lastName, avatar) {
-  this.firstName = firstName
-  this.lastName = lastName
-  this.avatar = avatar
+var date = new Date()
+// console.log(typeof date); // check kieu du lieu
+// console.log(date); // tra ve gia tri
 
-  this.getName = function () {
-    return `${this.firstName} ${this.lastName}`
+var date2 = Date() // typeof = string, khong su dung de truy xuat vao cac phuong thuc, thoc tinh cua doi tuong Date duoc
+// console.log(date);
+
+// mot so phuong thuc va thuoc tinh cua Date()
+// console.log(date.getFullYear()); // Gets the year, using local time.
+// console.log(date.getHours()); // Gets the hours in a date, using local time.
+// console.log(date.getMinutes()); // Gets the minutes of a Date object, using local time
+// console.log(date.getDay()); // Gets the day of the week, using local time
+// console.log(date.getMonth()); // Gets the month, using local time
+// console.log(date.getDate()); // Gets the day-of-the-month, using local time
+// console.log(date.getTime()); // Returns the stored time value in milliseconds since midnight, January 1, 1970 UTC
+
+
+
+/**
+ * bai tap thuc hanh, tao dong ho dien tu
+ */
+
+function formatString(string) {
+  return string.length < 2 ? `0${string}` : string
+}
+
+function returnTime() {
+  console.clear();
+  var h = new Date().getHours().toString()
+  var m = new Date().getMinutes().toString()
+  var s = new Date().getSeconds().toString()
+  console.log('Thoi gian:');
+  returnDate();
+  console.log(formatString(h) + ':' + formatString(m) + ':' + formatString(s));
+}
+
+function returnDate() {
+  var y = new Date().getFullYear().toString()
+  var m = (new Date().getMonth() + 1).toString()
+  var d = new Date().getDate().toString()
+  var day = (new Date().getDay() + 1).toString()
+
+  var mm = m.length > 1 ? m : `0${m}`
+  var dd = d.length > 1 ? d : `0${d}`
+  var ddd = ''
+  switch (day) {
+    case '2':
+      ddd = 'Thu hai'
+      break;
+    case '3':
+      ddd = 'Thu ba'
+      break;
+    case '4':
+      ddd = 'Thu tu'
+      break;
+    case '5':
+      ddd = 'Thu nam'
+      break;
+    case '6':
+      ddd = 'Thu sau'
+      break;
+    case '7':
+      ddd = 'Thu bay'
+      break;
+    case '1':
+      ddd = 'Chu nhat'
+      break;
+    default:
+      break;
   }
+  console.log(`${ddd}, ngay ${dd} thang ${mm} nam ${y}`)
 }
 
-// dinh nghia them 1 thuoc tinh ben ngoai ham tao
-User.prototype.className = 'gto'
-User.prototype.sayHi = function () {
-  return `hi my name is ${this.firstName} ${this.lastName}`
-}
-
-var u1 = new User(`thanh`, `long`, `avt.jpg`);
-var u2 = new User(`tun`, `pham`, `avt.jpg`);
-var u3 = new User()
-
-console.log(`>>> check u3`, u3); // check u3 before set value
-
-u3 = {
-  avatar: 'xinchao.png',
-  firstName: 'do',
-  lastName: 'hieu'
-}
-console.log(u3);
-
-u3.firstName = 'chiu'
-u3.lastName = 'van'
-u3.avatar = 'anonimous.webs'
-console.log(u3);
-
-console.log(u1.className);
-console.log(u2.sayHi());
-console.log('>>> check u3 after set value:', u3);
-console.log(u3 === u2); // true
-
-/**
- * bai tap thuc hanh:
- * tao 1 object constructor Student, voi cac propertis: firstName, lastName
- * sau do dinh nghia them 1 phuong thuc getFullName tra ve fullname cua Student
- */
-
-function Student(firstName, lastName) {
-  this.firstName = firstName,
-    this.lastName = lastName
-}
-
-Student.prototype.getFullName = function () {
-  return this.firstName + ' ' + this.lastName
-}
-
-// kiem tra ket qua:
-console.log(`Kiem tra ket qua:`);
-var stu1 = new Student('tran', 'uyen')
-console.log(`stu1:`, stu1);
-console.log(`getFullName method: `, stu1.getFullName());
+setInterval(() => {
+  returnTime();
+}, 1000)
