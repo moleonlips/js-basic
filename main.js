@@ -1,80 +1,38 @@
 /**
- * Doi tuong Date trong JS
+ * Math object
+ * - Math.PI => tra ve gia tri cua so pi
+ * - Math.round() => lam tron so thap phan
+ * - Math.abs() => Returns the absolute value of a number (the value without regard to whether it is positive or negative). For example, the absolute value of -5 is the same as the absolute value of 5
+ * - Math.pow() => Returns the value of a base expression taken to a specified power
+ * - Math.ceil() => Returns the smallest integer greater than or equal to its numeric argument
+ * - Math.floor() => Return the greatest integer less then or equal to ins numeric agrument
+ * - Math.random() => Return the random number
+ * - Math.min() => Returns the smaller of a set of supplied numeric expressions
+ * - Math.max() => Returns the bigger of a set of supplied numeric expressions
  */
 
-var date = new Date()
-// console.log(typeof date); // check kieu du lieu
-// console.log(date); // tra ve gia tri
 
-var date2 = Date() // typeof = string, khong su dung de truy xuat vao cac phuong thuc, thoc tinh cua doi tuong Date duoc
-// console.log(date);
-
-// mot so phuong thuc va thuoc tinh cua Date()
-// console.log(date.getFullYear()); // Gets the year, using local time.
-// console.log(date.getHours()); // Gets the hours in a date, using local time.
-// console.log(date.getMinutes()); // Gets the minutes of a Date object, using local time
-// console.log(date.getDay()); // Gets the day of the week, using local time
-// console.log(date.getMonth()); // Gets the month, using local time
-// console.log(date.getDate()); // Gets the day-of-the-month, using local time
-// console.log(date.getTime()); // Returns the stored time value in milliseconds since midnight, January 1, 1970 UTC
-
-
+var myNum = Math.PI
+var randomNum = Math.random()
+// console.log(Math.PI);
+// console.log(Math.abs(-5)); // 5
+// console.log(Math.pow(3, 2)); // 3^2 = 9
+// console.log(Math.ceil(5.4)); // 6
+// console.log(Math.floor(4.7)); // 4
+// console.log(Math.min(1, 24, 4, -2, -145, 355, 2));
+// console.log(Math.max(1, 24, 4, -2, -145, 355, 2));
 
 /**
- * bai tap thuc hanh, tao dong ho dien tu
+ * Bai tap thuc hanh, tao 1 object constructor same like Math object
  */
 
-function formatString(string) {
-  return string.length < 2 ? `0${string}` : string
+var arr = [2, 4, 5]
+
+// 
+function getRandomItem(arr) {
+  var lengthOfArr = arr.length;
+  var randomItem = Math.ceil(Math.random() * lengthOfArr) - 1;
+  return arr[randomItem]
 }
 
-function returnTime() {
-  console.clear();
-  var h = new Date().getHours().toString()
-  var m = new Date().getMinutes().toString()
-  var s = new Date().getSeconds().toString()
-  console.log('Thoi gian:');
-  returnDate();
-  console.log(formatString(h) + ':' + formatString(m) + ':' + formatString(s));
-}
-
-function returnDate() {
-  var y = new Date().getFullYear().toString()
-  var m = (new Date().getMonth() + 1).toString()
-  var d = new Date().getDate().toString()
-  var day = (new Date().getDay() + 1).toString()
-
-  var mm = m.length > 1 ? m : `0${m}`
-  var dd = d.length > 1 ? d : `0${d}`
-  var ddd = ''
-  switch (day) {
-    case '2':
-      ddd = 'Thu hai'
-      break;
-    case '3':
-      ddd = 'Thu ba'
-      break;
-    case '4':
-      ddd = 'Thu tu'
-      break;
-    case '5':
-      ddd = 'Thu nam'
-      break;
-    case '6':
-      ddd = 'Thu sau'
-      break;
-    case '7':
-      ddd = 'Thu bay'
-      break;
-    case '1':
-      ddd = 'Chu nhat'
-      break;
-    default:
-      break;
-  }
-  console.log(`${ddd}, ngay ${dd} thang ${mm} nam ${y}`)
-}
-
-setInterval(() => {
-  returnTime();
-}, 1000)
+console.log(getRandomItem(arr));
